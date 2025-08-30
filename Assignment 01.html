@@ -6,19 +6,32 @@
   <title>Document</title>
 </head>
 <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   #menu{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: lightblue;
-    padding: 10px;
-    gap: 340px;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   #menu img{
     width: 200px;
     height: 200px;
     border-radius: 50px;
     margin: 10px;
+    box-shadow: 5px 10px 18px gray;
   }
   a{
     padding: 2px;
@@ -29,14 +42,35 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
-  h1{
+  a:hover{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     color: darkblue;
     margin: 10px;
     text-shadow: 2px 2px 5px gray;
-    background-color: rgb(212, 243, 244);
+    background-color: rgb(217, 241, 242);
+    border-radius: 30px;
+    transition: 0.5s;
+  }
+  .header{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkblue;
+    margin: 20px;
+    text-shadow: 2px 2px 5px gray;
+    background-color: rgb(217, 241, 242);
+    border-radius: 30px;
+    height: 115px;
+    border: 2px solid black;
+    box-shadow: 5px 10px 18px gray;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    background-image: url('https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg');
   }
   img{
     display: block;
@@ -63,15 +97,77 @@
     width: 300px;
     height: 200px;
     margin: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 18px gray;
+    transition: 0.5s;
   }
-  h2{
+  .box img:hover{
+    width: 350px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 18px gray;
+    transition: 0.5s;
+  }
+  .h2{
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkblue;
+    margin: 20px;
+    text-shadow: 2px 2px 5px gray;
+    background-color: rgb(217, 241, 242);
+    border-radius: 30px;
+    height: 60px;
+    border: 2px solid black;
+    box-shadow: 5px 10px 18px gray;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+  }
+  .para{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    margin: 10px;
+    padding: 10px;
+    line-height: 1.5;
+    width: 500px;
+    height: 400px;
+    overflow: auto;
+    border: 2px solid black;
+    box-shadow: 5px 10px 18px gray;
+    border-radius: 20px;
+    background-color: rgb(217, 241, 242);
+    word-spacing: 3px;
+    transition: 0.5s;
   }
   p{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     margin: 10px;
+    padding: 10px;
+    line-height: 1.5;
+    width: 300px;
+    height: 150px;
+    overflow: auto;
+    border: 2px solid black;
+    box-shadow: 5px 10px 18px gray;
+    border-radius: 20px;
+    background-color: rgb(217, 241, 242);
+  }
+  hr{
+    border: 2px solid black;
+    margin: 20px;
+    box-shadow: 5px 10px 18px gray;
+    border-radius: 10px;
+    background-color: darkblue;
+    height: 5px;
+    width: 90%;
+    opacity: 0.7;1
   }
 </style>
 <body>
@@ -83,22 +179,22 @@
         <a href="#Class">Class</a>
       </div>
       <hr>
-      <h1>Welcome to ABES</h1>
+      <div class="header"><h1>Welcome to ABES</h1></div>
       <hr>
       <div class="cls">
       <img src="img.jpg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita aliquam, mollitia a esse nesciunt perspiciatis. Nostrum, architecto obcaecati! Officiis recusandae quaerat nisi fugit consequatur quo officia, optio nobis saepe magni deleniti vel tempora hic velit quibusdam distinctio ipsum! Temporibus aut modi asperiores vel soluta facilis odit fugiat, autem, nisi quam excepturi tempora eveniet optio placeat aliquid? Tempore nulla eius rerum quod vel delectus ipsum laborum architecto, fugiat iusto voluptatum consequatur optio similique sunt inventore! Exercitationem voluptates asperiores voluptatibus. Quia, consectetur eveniet repellat ea nemo corrupti illo. Neque alias impedit consectetur deserunt adipisci ex assumenda eius consequatur dolor voluptatem, officiis ipsum cum quidem nesciunt perspiciatis! Exercitationem vitae, sapiente inventore ea omnis cupiditate voluptatibus atque enim iure! Quas quia perferendis ut, sunt quis quos dolorum ab vitae voluptatibus ducimus reprehenderit repudiandae provident maxime ea modi esse. Deserunt dolores dolor sit laudantium est provident quia a, quidem reprehenderit adipisci ipsum harum ab laboriosam? Ad, earum a! Vitae in quisquam veritatis repellendus eius earum non dignissimos quidem animi iste voluptates provident temporibus placeat maxime dolorum excepturi eos ut, suscipit, laboriosam aspernatur maiores qui ratione accusantium velit? Iusto ex provident asperiores perferendis. Nemo accusantium ullam iure itaque dicta distinctio ex, corporis sed delectus. Aperiam, repellat.</p>
+      <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita aliquam, mollitia a esse nesciunt perspiciatis. Nostrum, architecto obcaecati! Officiis recusandae quaerat nisi fugit consequatur quo officia, optio nobis saepe magni deleniti vel tempora hic velit quibusdam distinctio ipsum! Temporibus aut modi asperiores vel soluta facilis odit fugiat, autem, nisi quam excepturi tempora eveniet optio placeat aliquid? Tempore nulla eius rerum quod vel delectus ipsum laborum architecto, fugiat iusto voluptatum consequatur optio similique sunt inventore! Exercitationem voluptates asperiores voluptatibus. Quia, consectetur eveniet repellat ea nemo corrupti illo. Neque alias impedit consectetur deserunt adipisci ex assumenda eius consequatur dolor voluptatem, officiis ipsum cum quidem nesciunt perspiciatis! Exercitationem vitae, sapiente inventore ea omnis cupiditate voluptatibus atque enim iure! Quas quia perferendis ut, sunt quis quos dolorum ab vitae voluptatibus ducimus reprehenderit repudiandae provident maxime ea modi esse. Deserunt dolores dolor sit laudantium est provident quia a, quidem reprehenderit adipisci ipsum harum ab laboriosam? Ad, earum a! Vitae in quisquam veritatis repellendus eius earum non dignissimos quidem animi iste voluptates provident temporibus placeat maxime dolorum excepturi eos ut, suscipit, laboriosam aspernatur maiores qui ratione accusantium velit? Iusto ex provident asperiores perferendis. Nemo accusantium ullam iure itaque dicta distinctio ex, corporis sed delectus. Aperiam, repellat.</p>
       </div>
       <hr>
-      <h2>Welcome to Ghaziabad</h2>
+      <h2 class="h2">Welcome to Ghaziabad</h2>
       <hr>
       <div class="box">
         <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sitamet consectetur adipisicing elit.</p>
         <img src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sitamet consectetur adipisicing elit.</p>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Fettjl2rGDjHBlCYCXcWMRAoKDr_AQOoXQ&s" alt="">
-        <p>12Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum elited dolorsitamet consectetur adipisicing elit.</p>
       </div>
       </main>
 </body>

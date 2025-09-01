@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #2980b9, #6dd5fa, #ffffff);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .main {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      max-width: 350px;
+      width: 100%;
+    }
+    label {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      display: block;
+    }
+    input[type="radio"] {
+      accent-color: #2980b9;
+      margin-right: 8px;
+      margin-bottom: 12px;
+      transform: scale(1.2);
+    }
+    .main br {
+      line-height: 2;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 28px;
+      background: linear-gradient(90deg, #2980b9, #6dd5fa);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(41, 128, 185, 0.15);
+      transition: background 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #6dd5fa, #2980b9);
+      transform: translateY(-2px) scale(1.04);
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <label>Seletc Your Payment Mode :</label>
+    <input type="radio" name="a">UPI <br>
+    <input type="radio" name="a">CASH ON <br>
+    <input type="radio" name="a">Credit Card <br>
+    <input type="radio" name="a">Debit Card <br>
+    <h3>Thank you for selecting our services</h3>
+    <a href="Assignment 02.html" class="btn">Previous</a>
+    <a href="###" class="btn">Proceed To Pay</a>
+  </div>
+</body>
+
+</html>

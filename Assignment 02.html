@@ -69,17 +69,14 @@
       font-size: 1rem;
       transition: border 0.2s;
     }
-
     .left input[type="text"]:focus,
     .left input[type="password"]:focus {
       border: 1.5px solid #ed4c92;
       outline: none;
     }
-
     .left input[type="file"] {
       margin: 8px 0 14px 0;
     }
-
     .left input[type="button"] {
       background: #ed4c92;
       color: #fff;
@@ -92,49 +89,25 @@
       transition: background 0.2s;
       margin-top: 10px;
     }
-
     .left input[type="button"]:hover {
       background: #c43c7d;
     }
-
     .left input[type="radio"] {
       margin-left: 10px;
       cursor: pointer;
       accent-color: #ed4c92;
     }
-
     .right {
       width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     .right img {
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
       border: 3px solid #ed4c92;
       background: #fff;
     }
-
-    /* @media (max-width: 900px) {
-      .form {
-        flex-direction: column;
-        margin: 20px 10px;
-        padding: 20px 0;
-      }
-
-      .left,
-      .right {
-        width: 100%;
-        padding: 10px;
-      }
-
-      .right img {
-        width: 100%;
-        height: auto;
-        max-width: 400px;
-      }
-    } */
     hr {
       border: 2px solid black
     }
@@ -168,11 +141,11 @@
             </tr>
           <tr>
             <td><label>User Name:</label></td>
-            <td><input type="text" placeholder="Enter Your Name"></td>
+            <td><input type="text" placeholder="Enter Your Name" required></td>
           </tr>
           <tr>
             <td><label>User Password:</label></td>
-            <td><input type="password" placeholder="Enter Your Password"></td>
+            <td><input type="password" placeholder="Enter Your Password" required></td>
           </tr>
           <tr>
             <td><label>Date of Birth :</label></td>
@@ -212,5 +185,4 @@
     </div>
   </div>
 </body>
-
 </html>

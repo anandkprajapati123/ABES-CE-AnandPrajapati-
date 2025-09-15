@@ -7,10 +7,20 @@
 <body>
   <p id="an"></p>
   <script>
-    const car = new Array("Toyota11", "Defender22", "Bolero33. !");
-    car[2]="Lamborginni. !"
-    document.getElementById("an").innerHTML = "<h1>"+car+"</h1>";
+    // const car = new Array("Toyota11", "Defender22", "Bolero33. !");
+    // car[2]="Lamborginni. !"
+    // document.getElementById("an").innerHTML = "<h1>"+car+"</h1>";
+    // document.write("<br>");
+    // document.getElementById("an").innerHTML = "<h1>"+car[2]+"</h1>";
+    // document.write("<br>");
+    // document.getElementById("an").innerHTML = "<h1>"+car.length+"</h1>";
 
+    const person = {
+      name: "<h1>Anand</h1>",
+      dob: "12/03/2005",
+      age: 21
+    };
+    document.getElementById("an").innerHTML = person.name;
   </script>
 </body>
 

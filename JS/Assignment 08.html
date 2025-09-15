@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Cart</title>
+  <style>
+    .cart {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      border: 2px solid #444;
+      border-radius: 10px;
+      padding: 15px;
+      width: 150px;
+      background: #f2f2f2;
+    }
+
+    .box h3 {
+      text-align: center;
+      margin-bottom: 10px;
+      background: #ddd;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .box ul li {
+      padding: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Student Cart (Grouped by Branch)</h1>
+  <div id="cart" class="cart"></div>
+
+  <script>
+    // JSON Data
+    const students = [
+      { name: "Anand", branch: "CE" },
+      { name: "Ankit", branch: "ELCE" },
+      { name: "Priya", branch: "CSE" },
+      { name: "Simran", branch: "ME" },
+      { name: "Aman", branch: "ECE" }
+    ];
+
+    // Group students by branch
+    const grouped = {};
+    students.forEach(student => {
+      if (!grouped[student.branch]) {
+        grouped[student.branch] = [];
+      }
+      grouped[student.branch].push(student.name);
+    });
+
+    // Render to page
+    const cartDiv = document.getElementById("cart");
+    for (let branch in grouped) {
+      const box = document.createElement("div");
+      box.classList.add("box");
+
+      const title = document.createElement("h3");
+      title.textContent = branch;
+      box.appendChild(title);
+
+      const list = document.createElement("ul");
+      grouped[branch].forEach(name => {
+        const li = document.createElement("li");
+        li.textContent = name;
+        list.appendChild(li);
+      });
+      box.appendChild(list);
+
+      cartDiv.appendChild(box);
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- save as index.html and open in a browser -->
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Students grouped by branch</title>
+  <style>
+    :root{
+      --bg:#f4f6fb;
+      --card:#ffffff;
+      --muted:#666;
+      --accent:#2b6cb0;
+      --gap:14px;
+    }
+    body{
+      margin:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#111;
+    }
+    h1{ font-size:20px; margin:0 0 12px 0; }
+    .controls { margin-bottom:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    input[type="text"]{
+      padding:8px 10px;
+      border-radius:8px;
+      border:1px solid #ddd;
+      min-width:220px;
+    }
+
+    .branches {
+      display:flex;
+      gap:var(--gap);
+      flex-wrap:wrap;
+    }
+
+    .branch-box{
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(20,30,60,0.06);
+      padding:12px;
+      min-width:260px;
+      max-width:360px;
+      flex:1 1 300px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .branch-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+    }
+    .branch-title{
+      font-weight:600;
+      font-size:16px;
+    }
+    .count{
+      background:#eef6ff;
+      color:var(--accent);
+      padding:4px 8px;
+      font-size:12px;
+      border-radius:999px;
+    }
+
+    .students {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+
+    .student-card{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:8px;
+      border-radius:10px;
+      border:1px solid #f0f0f3;
+      background:#fff;
+    }
+    .avatar{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#9be7ff,#7ec8ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#034;
+      font-weight:700;
+      font-size:14px;
+    }
+    .student-info{ font-size:13px; }
+    .student-name{ font-weight:600; }
+    .student-roll{ color:var(--muted); font-size:12px; }
+
+    .empty {
+      color:var(--muted);
+      font-size:13px;
+      padding:12px;
+      text-align:center;
+      border-radius:8px;
+      background:#fbfbff;
+    }
+
+    @media (max-width:640px){
+      .branches{ flex-direction:column; }
+      .branch-box{ max-width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Students grouped by branch (JSON → boxes)</h1>
+
+  <div class="controls">
+    <input id="search" placeholder="Search name or roll (type to filter)" />
+    <button id="shuffle">Shuffle sample</button>
+    <div style="margin-left:auto;color:var(--muted);font-size:13px">Demo: JSON → Group by branch</div>
+  </div>
+
+  <div id="branches" class="branches"></div>
+
+  <script>
+    // Sample JSON data (could come from server or file)
+    const studentsJson = [
+      {"name":"Anand Prajapati","roll":"21CS101","branch":"CSE"},
+      {"name":"Riya Sharma","roll":"21CS102","branch":"CSE"},
+      {"name":"Vikram Singh","roll":"21EC201","branch":"ECE"},
+      {"name":"Sana Patel","roll":"21EC202","branch":"ECE"},
+      {"name":"Karan Mehta","roll":"21ME301","branch":"ME"},
+      {"name":"Priya Nair","roll":"21CS103","branch":"CSE"},
+      {"name":"Arjun Rao","roll":"21CE401","branch":"CE"},
+      {"name":"Neha Gupta","roll":"21ME302","branch":"ME"},
+      {"name":"Tina Roy","roll":"21CE402","branch":"CE"}
+    ];
+
+    // Utility: group array of students by branch
+    function groupByBranch(list){
+      return list.reduce((acc, s) => {
+        const b = (s.branch || 'Unknown').toString();
+        if(!acc[b]) acc[b] = [];
+        acc[b].push(s);
+        return acc;
+      }, {});
+    }
+
+    // Render grouped boxes
+    const container = document.getElementById('branches');
+    function render(students){
+      container.innerHTML = '';
+      const groups = groupByBranch(students);
+
+      // Sort branches alphabetically for stable order
+      const branches = Object.keys(groups).sort();
+
+      if(branches.length === 0){
+        container.innerHTML = '<div class="empty">No students to show</div>';
+        return;
+      }
+
+      branches.forEach(branch => {
+        const box = document.createElement('div');
+        box.className = 'branch-box';
+
+        const header = document.createElement('div');
+        header.className = 'branch-header';
+        header.innerHTML = `<div class="branch-title">${branch}</div><div class="count">${groups[branch].length}</div>`;
+        box.appendChild(header);
+
+        const list = document.createElement('div');
+        list.className = 'students';
+
+        // Sort students in this branch by name
+        groups[branch].sort((a,b)=> a.name.localeCompare(b.name)).forEach(s => {
+          const card = document.createElement('div');
+          card.className = 'student-card';
+
+          const initials = s.name.split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
+          card.innerHTML = `
+            <div class="avatar">${initials}</div>
+            <div class="student-info">
+              <div class="student-name">${s.name}</div>
+              <div class="student-roll">${s.roll}</div>
+            </div>
+          `;
+          list.appendChild(card);
+        });
+
+        box.appendChild(list);
+        container.appendChild(box);
+      });
+    }
+
+    // Initial render
+    render(studentsJson);
+
+    // Search filter (name or roll)
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      if(!q){
+        render(studentsJson);
+        return;
+      }
+      const filtered = studentsJson.filter(s =>
+        s.name.toLowerCase().includes(q) ||
+        (s.roll && s.roll.toLowerCase().includes(q)) ||
+        (s.branch && s.branch.toLowerCase().includes(q))
+      );
+      render(filtered);
+    });
+
+    // Shuffle demo button to show dynamic grouping
+    document.getElementById('shuffle').addEventListener('click', () => {
+      const shuffled = studentsJson.slice().sort(()=>Math.random()-0.5);
+      render(shuffled);
+    });
+
+    // If you want to load JSON from a file, use fetch:
+    // fetch('/students.json').then(r=>r.json()).then(data=>{ studentsJson = data; render(data); });
+    // (If you fetch, make studentsJson a let instead of const.)
+  </script>
+</body>
+</html> -->

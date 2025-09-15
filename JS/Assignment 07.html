@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // table of a and b
+    var a = prompt("Enter :" + a);
+    var b = prompt("Enter :" + b);
+    for (var i = 1; i <= 10; i++) {
+      document.writeln(a + "*" + i + "=" + a * i + "<br>");
+    }
+    if (i % 2 == 0) {
+      document.write("even is:" + i);
+    }
+    document.write("<br>")
+    for (var i = 1; i <= 10; i++) {
+      document.writeln(b + "*" + i + "=" + b * i + "<br>");
+    }
+
+    document.write("<br>")
+    document.write("Common Even no are:");
+    for (var i = 1; i <= 10; i++) {
+      var c;
+      if (a * i % 2 == 0) {
+        var c = a * i;
+      }
+      document.write(c);
+    }
+
+  </script>
+</body>
+
+</html>

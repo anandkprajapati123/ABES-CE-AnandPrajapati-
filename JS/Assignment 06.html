@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title>Counter Example</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    .main{
+      margin: 20px 250px;
+      padding: 20px;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+    }
+    img{
+      height: 200px;
+      width: 200px;
+      border-radius: 5px;
+    }
+    .counter{
+      margin: 20px 250px;
+      padding: 20px;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+    }
+    .btn bold{
+      font-size: 30px;
+      border-radius: 5px;
+      padding: 10px;
+      gap: 30px;
+    }
+    .btn{
+      gap: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="img">
+      <img src="https://img.favpng.com/6/8/10/computer-icons-counter-png-favpng-S40edAKkmsbzkKR2YL1tRMCyh.jpg" alt="">
+    </div>
+    <div class="head">
+      <h1>Counter App</h1>
+    </div>
+  </div>
+  <div class="counter">
+    <div class="h2">
+      <h2>Counter: <span id="count">0</span></h2>
+    </div>
+    <div class="btn">
+      <button onclick="decrease()"><bold>-</bold></button>
+      <button onclick="increase()"><bold>+</bold></button>
+    </div>
+  </div>
+
+  <script>
+    var count = 0;
+    function increase() {
+      count++;
+      document.getElementById("count").innerText = count;
+      if(count>10){
+        document.getElementById("count").innerText = alert("value of counter is greater than 10");
+      }
+    }
+    function decrease() {
+      count--;
+      document.getElementById("count").innerText = count;
+      if(count<0){
+        document.getElementById("count").innerText = alert("value of counter is less than 0");
+      }
+    }
+  </script>
+</body>
+</html>

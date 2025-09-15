@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .top-div {
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    .bottom-div {
+      padding: 20px;
+      background-color: #ddd;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-div">
+    <img id="myImage" src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8=" alt="Sample Image">
+  </div>
+  <hr>
+
+  <div class="bottom-div">
+    <button id="hideBtn" onclick="img()">Hide Image</button>
+  </div>
+
+  <script>
+    document.getElementById("hideBtn").addEventListener("click", function() {
+      document.getElementById("myImage").style.display = "none";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<style>
+
+ .icon{
+    width: 50px; /* show only one icon area */
+    height: 160px;
+    display: inline-block;
+    background-image: url('sprites.jpg') ;
+    background-repeat: no-repeat;
+ }   
+.home {
+  background-position: 0px 0px; /* Top-left corner of the sprite */
+}
+.prev { 
+  background-position: -32px 0px;  /* 47px to the left of the sprite's top-left */
+}
+
+.next {
+  background-position: -64px 0px; /* 91px to the left of the sprite's top-left */
+}
+</style>
+</head>
+<body>
+  <span class="icon home"></span>
+  <span class="icon prev"></span>
+  <span class="icon next"></span>
+</body>
+</html>

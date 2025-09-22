@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Generator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+    }
+    .box h1{
+      margin: 30px 90px;
+    }
+    .resume {
+      width: 45%;
+      border: 2px solid black;
+      padding: 15px;
+    }
+    .resume img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form{
+      width: 45%;
+      border: 2px solid #333;
+      padding: 15px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="resume" id="resumeOutput">
+    <div class="box">
+      <img src="profile.webp" alt="Profile Image" id="profileImage">
+      <h1 id="resName">Your Name</h1>
+    </div>
+    <h3>Education</h3>
+    <p>B.Tech</p>
+    <h3>Skills</h3>
+    <ul id="resSkill">
+      <li>Skill 1</li>
+      <li>Skill 2</li>
+    </ul>
+    <h3>Address</h3>
+    <p id="resAddress">Your Address</p>
+  </div>
+
+  <div class="form">
+    <h2>Fill Your Details</h2>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="text" id="class" placeholder="Enter your class">
+    <input type="text" id="skill" placeholder="Enter your skills (comma separated)">
+    <textarea id="address" placeholder="Enter your address"></textarea>
+    <button onclick="generateResume()">Generate Resume</button>
+  </div>
+
+  <script>
+
+    function generateResume() {
+      let name = document.getElementById("name").value;
+      let skill = document.getElementById("skill").value;
+      let address = document.getElementById("address").value;
+
+      let skillList = (skills => {
+        return skills.split(",").map(s => `<li>${s.trim()}</li>`).join("");
+      })(skill);
+
+      document.getElementById("resName").innerText = `${name}`;
+      document.getElementById("resSkill").innerHTML = `${skillList}`;
+      document.getElementById("resAddress").innerText = `${address}`;
+    }
+  </script>
+
+</body>
+</html>

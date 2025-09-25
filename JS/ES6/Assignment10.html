@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <h1>TO DO List</h1>
+  <h3>Add Task</h3>
+  <input type="text" id="an">
+  <button onclick="Task()">+</button><br><br>
+  <input type="text" id="aa">
+  <button onclick="Task()">+</button>
+
+  <script>
+    function Task(){
+      let t=document.getElementById("an");
+      let t1=t.value;
+      document.getElementById("aa").innerHTML=t1;
+    }
+  </script>
+</body>
+</html>

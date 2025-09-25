@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #main {
+      height: 100%;
+      width: 80%;
+      border-right: 2px solid black;
+    }
+
+    .header {
+      text-align: center;
+      justify-content: center;
+      margin-top: 10px;
+      background-color: rgb(163, 79, 241);
+    }
+
+    .header h1 {
+      font-size: 45px;
+      font-weight: 600;
+      border-bottom: 2px solid gray;
+    }
+
+    .menu {
+      padding: 10px 10px;
+      text-align: center;
+      justify-content: center;
+      background-color: aqua;
+      height: 10vh;
+    }
+
+    .menu ul {
+      display: flex;
+      list-style: none;
+      text-align: center;
+      justify-content: space-between;
+    }
+
+    .menu ul li a {
+      justify-content: space-between;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div class="header">
+      <h1>Tutorial Website</h1>
+    </div>
+    <div class="menu">
+      <ul>
+        <div class="1">
+          <li><a href="content.html" target="A">Content</a></li>
+        </div>
+        <div class="2">
+          <li><a href="quiz.html" target="A">Quiz</a></li>
+        </div>
+        <div class="3">
+          <li><a href="exercise.html" target="A">Exercise</a></li>
+        </div>
+        <div class="4">
+          <li><a href="book.html" target="A">Book Reference</a></li>
+        </div>
+      </ul>
+    </div>
+    <iframe src="content.html" name="A" frameborder="0"></iframe>
+    < </div>
+</body>
+
+</html>

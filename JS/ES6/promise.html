@@ -4,7 +4,25 @@
 </head>
 <body>
   <script>
-    
+    const mypromise=new Promise((resolve,reject)=>{
+      const password="abc@12345";
+      if(password.length>8){
+        resolve("password length is ok");
+      }
+      else{
+        reject("password is not ok");
+      }
+    });
+    // console.log(mypromise);
+    mypromise.then((msg)=>{
+      console.log(msg);
+    });
+    mypromise.catch((err)=>{
+      console.log(err);
+    }).finally(()=>{
+      console.log("we are coder !");
+    })
+
   </script>
 </body>
 </html>

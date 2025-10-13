@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #id{
+        text-align: center;
+        justify-content: center;
+        
+      }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <table>
+            <tr>
+                <td><label for="Amount">Amount</label></td>
+                <td><input type="number" id="amt"></td>
+            </tr>
+            <tr>
+                <td><label for="IR">Interest Rate</label></td>
+                <td><input type="number" id="ir"></td>
+            </tr>
+            <tr>
+                <td><label for="Time">Time</label></td>
+                <td><input type="number" id="time"></td>
+            </tr>
+            <tr>
+                <td><button onclick="SI()">SI</button></td>
+                <td><button onclick="CI()">CI</button></td>
+            </tr>
+            <tr>
+                <td>Answer</td>
+                <td id="anss"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function SI(){
+          let amount = document.getElementById("amt").value;
+          let rate = document.getElementById("ir").value;
+          let time = document.getElementById("time").value;
+          let si = (amount*rate*time)/100;
+          document.getElementById("anss").innerHTML= si;
+                  
+        }
+        function CI(){
+            let amount = document.getElementById("amt").value;
+            let rate = document.getElementById("ir").value;
+            let time = document.getElementById("time").value;
+            let n = 1; // Compounding frequency (annually)
+            let totalAmount = amount * Math.pow(1 + (rate / 100) / n, n * time);
+            let ci = totalAmount - amount;
+            document.getElementById("anss").innerHTML= ci;
+        }
+    </script>
+</body>
+
+</html>

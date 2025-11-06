@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <center><h2>Registration Form</h2>
+      <table border="4" cellpadding="10" cellspacing="10">
+        <tr>
+        <td><label for="name">Name</label></td>
+        <td><input type="text" placeholder="Enter your name" name="name" id="name" required></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email</label></td>
+        <td><input type="email" placeholder="Enter your email" name="email" id="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="age">Age</label></td>
+        <td><input type="number" placeholder="Enter your age" name="age" id="age" required></td>
+      </tr>
+      <tr>
+        <td><label for="country">Country</label></td>
+        <td><input type="text" placeholder="Enter your country" name="country" id="country" required></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Submit" id="submit" onclick="showData()"></td>
+      </tr>
+    </table>
+  </center>
+  </form>
+  
+  <script>
+    function showData() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+      var country = document.getElementById("country").value;
+      alert("Name: " + name + "\nEmail: " + email + "\nAge: " + age + "\nCountry: " + country);
+    }
+  </script>
+</body>
+</html>

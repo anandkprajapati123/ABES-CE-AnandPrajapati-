@@ -1,0 +1,21 @@
+/* Reset layout issues caused by default styles */
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Optional styling */
+body {
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  padding-top: 60px; /* extra space so content isn't hidden behind fixed navbar */
+}
+
+h1 {
+  margin-top: 20px;
+  color: #212529;
+}

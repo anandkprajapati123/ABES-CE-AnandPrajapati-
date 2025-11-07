@@ -1,180 +1,89 @@
 <html>
 <head>
-    <title>Registration Form</title>
+    <title>Registration</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input:focus {
-            border-color: #007bff;
-        }
-        input.invalid {
-            border-color: #dc3545;
-        }
-        .error {
-            color: #dc3545;
-            font-size: 12px;
-            margin-top: 5px;
-            display: block;
-        }
-        button {
-            background: #007bff;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            width: 100%;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-        button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
+        .form-group { margin-bottom: 20px; }
+        body { font-family: Arial; max-width: 450px; margin: 50px auto; padding: 20px; }
+        input.invalid { border-color: #dc3545; }
+        input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background: #007bff; color: #fff; padding: 12px; border: none; border-radius: 4px; width: 100%; font-size: 16px; cursor: pointer; }
+        .error { color: #dc3545; font-size: 12px; margin-top: 5px; display: block; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        button:hover { background: #0056b3; }
     </style>
 </head>
 <body>
-    <h2>Registration Form</h2>
-    <form id="registrationForm">
+    <h2>Register Page</h2>
+    <form id="form">
         <div class="form-group">
             <label>Name:</label><br>
             <input type="text" id="name" placeholder="Full Name" required>
             <span class="error" id="nameError"></span>
         </div>
-
         <div class="form-group">
             <label>Phone:</label><br>
-            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="tel" id="phone" placeholder="Phone" required>
             <span class="error" id="phoneError"></span>
         </div>
-
         <div class="form-group">
             <label>Email:</label><br>
-            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="email" id="email" placeholder="Email" required>
             <span class="error" id="emailError"></span>
         </div>
-
         <div class="form-group">
             <label>Password:</label><br>
-            <input type="password" id="password" placeholder="Password (8 chars: 2 digits, 1 capital, 2 special)" required>
+            <input type="password" id="password" placeholder="Password" required>
             <span class="error" id="passwordError"></span>
         </div>
-
-        <button type="submit" id="submitBtn">Submit</button>
+        <button id="submit">Submit</button>
     </form>
-
     <script>
-        function validateName(name) {
-            const regex = /^[a-zA-Z\s]+$/;  // Only letters and spaces
-            return regex.test(name.trim()) && name.trim().length >= 2;
+        function validateName(n) { return /^[a-zA-Z\s]{8,}$/.test(n.trim()); }
+        function validatePhone(p) { return /^\d{10}$/.test(p); }
+        function validateEmail(e) { return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e); }
+        function validatePassword(p) {
+            if (p.length !== 8) return false;
+            const d = (p.match(/\d/g) || []).length;
+            const u = (p.match(/[A-Z]/g) || []).length;
+            const s = (p.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length;
+            return d >= 2 && u >= 1 && s >= 2;
         }
-
-        function validatePhone(phone) {
-            const regex = /^\d{10}$/;
-            return regex.test(phone);
-        }
-
-        function validateEmail(email) {
-            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return regex.test(email);
-        }
-
-        function validatePassword(password) {
-            if (password.length !== 8) return false;
-
-            const digits = (password.match(/\d/g) || []).length;
-            const uppercase = (password.match(/[A-Z]/g) || []).length;
-            const specialChars = (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length;
-
-            return digits >= 2 && uppercase >= 1 && specialChars >= 2;
-        }
-
-        function showError(field, message) {
-            document.getElementById(field).classList.add('invalid');
-            document.getElementById(field + 'Error').textContent = message;
-        }
-
-        function clearError(field) {
-            document.getElementById(field).classList.remove('invalid');
-            document.getElementById(field + 'Error').textContent = '';
-        }
-
-        function validateField(field) {
-            const value = document.getElementById(field).value;
-            let isValid = false;
-
-            switch (field) {
-                case 'name':
-                    isValid = validateName(value);
-                    break;
-                case 'phone':
-                    isValid = validatePhone(value);
-                    break;
-                case 'email':
-                    isValid = validateEmail(value);
-                    break;
-                case 'password':
-                    isValid = validatePassword(value);
-                    break;
+        function showError(f, m) { document.getElementById(f).classList.add('invalid'); document.getElementById(f + 'Error').textContent = m; }
+        function clearError(f) { document.getElementById(f).classList.remove('invalid'); document.getElementById(f + 'Error').textContent = ''; }
+        function checkField(f) {
+            const v = document.getElementById(f).value; let valid = false;
+            switch (f) {
+                case 'name': valid = validateName(v); break;
+                case 'phone': valid = validatePhone(v); break;
+                case 'email': valid = validateEmail(v); break;
+                case 'password': valid = validatePassword(v); break;
             }
-
-            if (isValid) {
-                clearError(field);
-            } else {
-                let message = '';
-                switch (field) {
-                    case 'name': message = 'Name must contain only letters (min 2 chars)'; break;
-                    case 'phone': message = 'Phone must be exactly 10 digits'; break;
-                    case 'email': message = 'Invalid email format'; break;
-                    case 'password': message = 'Exactly 8 chars: ≥2 digits, ≥1 capital, ≥2 special (!@#$%^&*)'; break;
-                }
-                showError(field, message);
+            if (valid) { clearError(f); }
+            else {
+                let msg = '';
+                if (f === 'name') msg = 'Name must have only letters and (min 10)';
+                if (f === 'phone') msg = '10 digits required';
+                if (f === 'email') msg = 'Invalid email';
+                if (f === 'password') msg = '8 chars: ≥2 digits, 1 uppercase, ≥2 special';
+                showError(f, msg);
             }
-            return isValid;
+            return valid;
         }
-
-        ['name', 'phone', 'email', 'password'].forEach(field => {
-            const input = document.getElementById(field);
-            input.addEventListener('blur', () => validateField(field));
-            input.addEventListener('input', () => {
-                if (input.classList.contains('invalid')) {
-                    validateField(field);
-                }
-            });
+        ['name', 'phone', 'email', 'password'].forEach(f => {
+            const e = document.getElementById(f);
+            e.addEventListener('blur', () => checkField(f));
+            e.addEventListener('input', () => { if (e.classList.contains('invalid')) checkField(f); });
         });
-
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            let isValid = true;
-            ['name', 'phone', 'email', 'password'].forEach(field => {
-                if (!validateField(field)) isValid = false;
-            });
-
-            const submitBtn = document.getElementById('submitBtn');
-            if (isValid) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Submitting...';
-                alert('Form submitted successfully!\n\nData:\nName: ' + document.getElementById('name').value +
-                      '\nPhone: ' + document.getElementById('phone').value +
-                      '\nEmail: ' + document.getElementById('email').value);
-                this.reset();
+        document.getElementById('form').addEventListener('submit', e => {
+            e.preventDefault(); let ok = true;['name', 'phone', 'email', 'password'].forEach(f => { if (!checkField(f)) ok = false; });
+            if (ok) {
+                const btn = document.getElementById('submit'); btn.disabled = true;
+                btn.textContent = 'Submitting...';
+                alert('Success!\n\nData:\nName: ' +
+                document.getElementById('name').value + '\nPhone: ' +
+                document.getElementById('phone').value + '\nEmail: ' +
+                document.getElementById('email').value);
+                document.getElementById('form').reset();
             }
         });
     </script>

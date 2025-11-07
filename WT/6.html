@@ -80,19 +80,17 @@
     </form>
 
     <script>
-        // Validation Functions
         function validateName(name) {
             const regex = /^[a-zA-Z\s]+$/;  // Only letters and spaces
             return regex.test(name.trim()) && name.trim().length >= 2;
         }
 
         function validatePhone(phone) {
-            const regex = /^\d{10}$/;  // Exactly 10 digits
+            const regex = /^\d{10}$/;
             return regex.test(phone);
         }
 
         function validateEmail(email) {
-            // Standard email regex (includes @ and .)
             const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             return regex.test(email);
         }
@@ -100,14 +98,13 @@
         function validatePassword(password) {
             if (password.length !== 8) return false;
 
-            const digits = (password.match(/\d/g) || []).length;  // Count digits
-            const uppercase = (password.match(/[A-Z]/g) || []).length;  // Count uppercase
-            const specialChars = (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length;  // Count special chars
+            const digits = (password.match(/\d/g) || []).length;
+            const uppercase = (password.match(/[A-Z]/g) || []).length;
+            const specialChars = (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g) || []).length;
 
             return digits >= 2 && uppercase >= 1 && specialChars >= 2;
         }
 
-        // Error display functions
         function showError(field, message) {
             document.getElementById(field).classList.add('invalid');
             document.getElementById(field + 'Error').textContent = message;
@@ -118,7 +115,6 @@
             document.getElementById(field + 'Error').textContent = '';
         }
 
-        // Validate single field
         function validateField(field) {
             const value = document.getElementById(field).value;
             let isValid = false;
@@ -153,7 +149,6 @@
             return isValid;
         }
 
-        // Event Listeners for Real-time Validation
         ['name', 'phone', 'email', 'password'].forEach(field => {
             const input = document.getElementById(field);
             input.addEventListener('blur', () => validateField(field));
@@ -164,7 +159,6 @@
             });
         });
 
-        // Form Submit
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -180,7 +174,6 @@
                 alert('Form submitted successfully!\n\nData:\nName: ' + document.getElementById('name').value +
                       '\nPhone: ' + document.getElementById('phone').value +
                       '\nEmail: ' + document.getElementById('email').value);
-                // Here you can add AJAX submission
                 this.reset();
             }
         });

@@ -1,51 +1,93 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424; */
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6fa;
+}
+
+.navbar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  /* min-height: 100vh; */
+  justify-content: space-between;
+  align-items: center;
+  background: #002147;
+  color: white;
+  padding: 15px 30px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.navbar a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.book-card {
+  border: 3px solid red;
+  background: #b9d59f;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.book-card button {
+  margin: 5px;
+  background: #002147;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+
+.badge {
+  background: gold;
+  color: #002147;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.form-container input {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.form-container button {
+  background: #002147;
+  color: white;
+  border: none;
+  padding: 10px 20px;
 }

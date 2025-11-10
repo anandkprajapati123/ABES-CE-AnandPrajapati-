@@ -1,6 +1,16 @@
-#adi{
-  text-align: center;
-  display: flex;
-  gap: 10px;
-  padding: 20px;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
 }
+
+.page-center {
+  text-align: center;
+  margin-top: 100px;
+  color: #002147;
+  animation: fadeIn 1s ease;
+}
+
+/* Login and Register */
+

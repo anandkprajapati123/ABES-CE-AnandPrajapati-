@@ -4,14 +4,14 @@
   align-items: center;
   justify-content: center;
   min-height: 90vh;
-  background: linear-gradient(to right, #004aad, #0066cc);
+  background: linear-gradient(to right, #032858, #2f8eed);
   color: white;
   font-family: "Poppins", sans-serif;
 }
 
 .form-container h2 {
   font-size: 2rem;
-  color: #ffd700; /* Gold heading */
+  color: #ffd700;
   margin-bottom: 20px;
 }
 
@@ -24,20 +24,13 @@
   background-color: white;
   color: #002b5b;
   font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.form-container input:focus {
-  border-color: #004aad;
-  box-shadow: 0 0 5px #ffd700;
 }
 
 .form-container button {
   width: 150px;
   padding: 10px;
   margin-top: 15px;
-  background-color: #ffd700; /* Gold button */
+  background-color: #ffd700;
   color: #002b5b;
   font-weight: 600;
   border: none;

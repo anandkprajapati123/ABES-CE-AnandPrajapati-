@@ -5,10 +5,20 @@ import { useState } from 'react'
 function Book(props) {
   const [count, setCount] = useState(0);
   function inc() {
-    setCount(c => c + 1);
+    if(count>=10){
+      alert("limits reached")
+    }
+    else{
+      setCount(c => c + 1);
+    }
   }
   function dec() {
-    setCount(c => c - 1);
+    if(count<=0){
+      alert("less than zero")
+    }
+    else{
+      setCount(c => c - 1);
+    }
   }
 
   return (

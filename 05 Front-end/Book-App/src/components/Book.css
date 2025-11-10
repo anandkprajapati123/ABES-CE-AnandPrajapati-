@@ -3,12 +3,11 @@
   border-radius: 8px;
   height: 300px;
   width: 300px;
-  background-color: cadetblue;
+  background-color: rgb(172, 205, 139);
   color: white;
   font-size: 18px;
 }
 button {
-  color: blue;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;

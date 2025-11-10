@@ -21,6 +21,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 184vh;
 }
 
 .navbar .logo {

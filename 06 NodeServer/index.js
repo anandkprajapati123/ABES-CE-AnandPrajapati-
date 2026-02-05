@@ -1,3 +1,5 @@
+                // Day1
+
 // const http = require("http");
 
 // const myserver = http.createServer((req, res) => {
@@ -23,6 +25,7 @@
 
 
 
+                // Day 2
 
 // const fs = require('fs');
 
@@ -51,17 +54,38 @@
 // });
 
 
+                  // Day3
 
-
+// copy
 // const fs=require('fs');
 // fs.cpSync('CE.txt','CE1.txt');
 // fs.cpSync('CE1.txt','CE2.txt');
 
 
 // append
+// const fs=require('fs');
+// fs.appendFileSync('./CE.txt',`and we are coder`);
+
+
+// delete
+// const fs=require('fs');
+// fs.unlinkSync('./CE2.txt');
+
+
+
+// async
 
 const fs=require('fs');
 
-// fs.appendFileSync('./CE.txt',`and we are coder`);
+// fs.copyFile('./CE.txt','./CE1.txt',()=>{ });
 
-// delete
+// fs.copyFile('./CE.txt','./CE1.txt',(err,res)=>{
+//   if(err){
+//     console.log("error",err);
+//   }
+//   else{
+//     console.log(res);
+//   }
+// });
+
+

@@ -60,3 +60,8 @@
 
 // append
 
+const fs=require('fs');
+
+// fs.appendFileSync('./CE.txt',`and we are coder`);
+
+// delete

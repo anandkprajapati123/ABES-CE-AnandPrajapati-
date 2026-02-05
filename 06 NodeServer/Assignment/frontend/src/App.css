@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #282c34;
+  color: white;
+}
+
+.content {
+  padding: 20px;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 10px;
+}
+
+pre {
+  /* background: #f4f4f4; */
+  padding: 10px;
+}

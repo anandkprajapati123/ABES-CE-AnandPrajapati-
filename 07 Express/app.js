@@ -47,12 +47,12 @@ const students = [
     id:2,
     name:"Suresh",
     class: "ITI"
-  }
+  },
   {
     id:3,
     name:"Utkarsh",
     class: "IT"
-  }
+  },
   {
     id:4,
     name:"Dhananjay",
@@ -73,7 +73,7 @@ app.get('/read',(req,res)=>{
 
 
 // data read for a specific id
-app.get('/about/:id',(req,res)=>{
+app.get('/about/:id',(req,res)=>{ // id is route parameter
   try{
     const id = req.params.id;
     const student = students.find(s=>s.id==id);
@@ -108,28 +108,28 @@ app.post('/add',(req,res)=>{
 app.put('/edit/:id',(req,res)=>{
   try{
     const id = req.params.id;
-    const index = students.find(s=>s.id==id);
-    if(index==-1){
-      return res.status(404).json({message: "student data is not found", students});
+    const index = students.findIndex(s=>s.id==id);
+    if(index == -1){
+      return res.status(404).json({message: "student data is not found"});
     }
-    students[index]={
+    students[index] = {
       ...students[index],
       ...req.body
-    }
-    res.status(200).json({message: "student data found", data: students[index]});
+    };
+    res.status(200).json({message: "student data updated successfully", data: students[index]});
   }
   catch(err){
     res.status(500).json({message: "data not found", error: err.message});
   }
-})
+});
 
 
 // data delete
 app.delete('/delete/:id',(req,res)=>{
   try{
     const id = req.params.id;
-    const index = students.find(s=>s.id==id);
-    if(index==-1){
+    const index = students.findIndex(s=>s.id==id);
+    if(index == -1){
       return res.status(404).json({message: "student data is not found", student});
     }
     students.splice(index,1);
@@ -138,7 +138,7 @@ app.delete('/delete/:id',(req,res)=>{
   catch(err){
     res.status(500).json({message: "data not found", error: err.message});
   }
-})
+});
 
 
 app.listen(port,()=>{

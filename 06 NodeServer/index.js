@@ -137,37 +137,37 @@ function writeData(data) {
 }
 
 // CREATE
-// function addStudent(newStudent) {
-//   const data = readData();
-//   data.push(newStudent);
-//   writeData(data);
-//   console.log("Student Added");
-// }
+function addStudent(newStudent) {
+  const data = readData();
+  data.push(newStudent);
+  writeData(data);
+  console.log("Student Added");
+}
 
 // READ
-// function getStudents() {
-//   const data = readData();
-//   console.log(data);
-// }
+function getStudents() {
+  const data = readData();
+  console.log(data);
+}
 
 // UPDATE
-// function updateStudent(id, updatedData) {
-//   let data = readData();
-//   data = data.map(student =>
-//     student.id === id ? { ...student, ...updatedData } : student
-//   );
-//   writeData(data);
-//   console.log("Student Updated");
-// }
+function updateStudent(id, updatedData) {
+  let data = readData();
+  data = data.map(student =>
+    student.id === id ? { ...student, ...updatedData } : student
+  );
+  writeData(data);
+  console.log("Student Updated");
+}
 
-// function updateStudent(id, updateData){
-//   let data=readData();
-//   data=data.map(student=>
-//     student.id===id?{...student, ...updateData}:student
-//   );
-//   writeData(data);
-//   console.log("updated");
-// }
+function updateStudent(id, updateData){
+  let data=readData();
+  data=data.map(student=>
+    student.id===id?{...student, ...updateData}:student
+  );
+  writeData(data);
+  console.log("updated");
+}
 
 // DELETE
 function deleteStudent(id) {
@@ -178,12 +178,13 @@ function deleteStudent(id) {
 }
 
 
-// addStudent({ id: 3, name: "Anand", course: "B.Tech" });
+addStudent({ id: 3, name: "Anand", course: "B.Tech" });
 
-// getStudents();
+getStudents();
 
-// updateStudent(1, { name: "Anand prajapati" });
+updateStudent(1, { name: "Anand prajapati" });
 
 deleteStudent(3);
 
-// getStudents();
+getStudents();
+
